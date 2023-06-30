@@ -1,8 +1,9 @@
 """
 Example usage of class:
 
+from src.notification import TwilioManager
 tm = TwilioManager()
-tm.send_message(message='Camp is ready!', to='+16478337641')
+resp = tm.send_message(message='Camp is ready!', to='+16478337641')
 
 """
 from __future__ import annotations
@@ -37,3 +38,4 @@ class TwilioManager:
             to=to,
         )
         print(f'Message sent! Message SID: {response.sid}')
+        return response
